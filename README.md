@@ -16,4 +16,11 @@ Naive Greedy | Жадный алгоритм | greedy_alg | 120k total (400 avg 
 Bruteforce | Оптимизированный прямой перебор | bruteforce | ??? | ???
 
 
+## А еще?
+
+Алгоритм | Описание | Решение | Вывод 
+------------ | ------------- | -------------  | -------------
+[Attention, Learn to Solve Routing Problems!](https://github.com/wouterkool/attention-learn-to-route) | RL stuff |  Статья от студента, тестируется на маленьких задачах, в реальности кажется пока не работает
+[VRP-RL](https://github.com/OptMLGroup/VRP-RL) | yet another RL | Для стандартной TSR / VRP без модификаций
+clustering | space reduction | в задаче могут быть кластеры откуда / куда доставляют, но все равно нужен нормальный солвер внутри
 
