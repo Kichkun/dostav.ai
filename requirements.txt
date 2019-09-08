@@ -2,3 +2,4 @@ ortools
 numpy 
 scipy
 tqdm
+matplotlib
