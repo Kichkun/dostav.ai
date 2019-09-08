@@ -11,6 +11,6 @@
 ------------ | ------------- | -------------  | -------------  | -------------
 OR-Tools | Google VRP Solver | or-tools | ??? | ???
 Naive Greedy | Жадный алгоритм | greedy_alg | ??? | ???
-LKH-3 | Lin-Kernighan-Helsgaun TSP Solver | vovan-lkh | ??? | сложно адаптировать
-Bruteforce | Оптимизированный прямой преребор | bruteforce | ??? | ???
+LKH-3 | Lin-Kernighan-Helsgaun TSP Solver | vovan-lkh | ??? | ???
+Bruteforce | Оптимизированный прямой перебор | bruteforce | ???| ???
 
