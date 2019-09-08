@@ -276,8 +276,6 @@ SolveSubproblem(int CurrentSubproblem, int Subproblems,
                         fabs(GetTime() - LastTime),
                         GlobalCost < OptimumSaved ? "<" : GlobalCost ==
                         OptimumSaved ? "=" : "");
-            } else {
-                WriteTour(TourFileName, BestTour, GlobalCost);
             }
         }
 

@@ -66,8 +66,10 @@ int main(int argc, char *argv[])
     }
 
     /* Find a specified number (Runs) of local optima */
+    printff("vovan 3");
 
     for (Run = 1; Run <= Runs; Run++) {
+        printff("vovan 4");
         LastTime = GetTime();
         Cost = FindTour();      /* using the Lin-Kernighan heuristic */
         if (MaxPopulationSize > 1 && !TSPTW_Makespan) {
@@ -101,6 +103,7 @@ int main(int argc, char *argv[])
                     printff("\n");
                 }
             }
+            printff("vovan 5");
             if (!HasFitness(CurrentPenalty, Cost)) {
                 if (PopulationSize < MaxPopulationSize) {
                     AddToPopulation(CurrentPenalty, Cost);
@@ -122,8 +125,6 @@ int main(int argc, char *argv[])
             BestCost = Cost;
             RecordBetterTour();
             RecordBestTour();
-            WriteTour(TourFileName, BestTour, BestCost);
-        } else {
             WriteTour(TourFileName, BestTour, BestCost);
         }
         OldOptimum = Optimum;

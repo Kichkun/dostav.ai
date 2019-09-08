@@ -1,2 +1,5 @@
 ./run_PDPTW courier hard_1 1000 10 100000000
+./run_PDPTW courier lkh_file_small 1000 1 100000000
+./run_PDPTW courier lkh_file_medium 1000 1 100000000
 ./run_PDPTW courier lkh_file_large 1000 1 100000000
+./run_PDPTW courier lkh_file_all 1000 1 100000000

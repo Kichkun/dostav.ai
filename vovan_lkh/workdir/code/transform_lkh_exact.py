@@ -9,6 +9,8 @@ output = open('lkh_file.pdptw', 'w')
 output.write('NAME : couriers\n')
 output.write('TYPE : PDPTW\n')
 
+json_file['orders'] = json_file['orders'][:50]
+print(len(json_file['orders']))
 dim = 2 * len(json_file['orders'])
 output.write(f'DIMENSION : {dim + 1}\n')
 

@@ -23,13 +23,13 @@ echo "PROBLEM_FILE = INSTANCES/$class/$name.pdptw" >> $par
 echo "MAX_TRIALS = $max_trials" >> $par
 echo "RUNS = $runs" >> $par
 echo "TOUR_FILE = TOURS/$class/$name.$.tour" >> $par
-echo "OUTPUT_TOUR_FILE = tour.txt" >> $par
+#echo "OUTPUT_TOUR_FILE = tour.txt" >> $par
 echo "TRACE_LEVEL = 1" >> $par
 echo "CANDIDATE_SET_TYPE = POPMUSIC" >> $par
 
-if [ -n "$optimum" ]; then
-    echo "OPTIMUM = $optimum" >> $par
-fi
+# if [ -n "$optimum" ]; then
+#     echo "OPTIMUM = $optimum" >> $par
+# fi
 
 $lkh $par
 
