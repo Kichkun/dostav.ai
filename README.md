@@ -1,6 +1,8 @@
 # Dostav.ai
 # Эксперименты с PC-VRPTW для кейса Dostavista от команды RHT.ai
 
+python -m pip install --upgrade --user ortools
+
 Чтобы запустить код, нужно поменять в скрипте **run.py** data = ... на необходимый файл.
 
 Запустите setup.py из папки с решением для установки зависимостей
