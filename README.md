@@ -9,8 +9,8 @@
 
 Алгоритм | Описание | Решение | Очки | Вывод 
 ------------ | ------------- | -------------  | -------------  | -------------
-OR-Tools | с ограничениями | or-tools | ??? | ???
-Naive Greedy | жадный алгоритм | greedy_alg | ??? | ???
-LKH-3 | сложно адаптировать | vovan-lkh | ??? | ???
-Bruteforce | Оптимизированный преребор | bruteforce | ??? | ???
+OR-Tools | Google VRP Solver | or-tools | ??? | ???
+Naive Greedy | Жадный алгоритм | greedy_alg | ??? | ???
+LKH-3 | Lin-Kernighan-Helsgaun TSP Solver | vovan-lkh | ??? | сложно адаптировать
+Bruteforce | Оптимизированный прямой преребор | bruteforce | ??? | ???
 
