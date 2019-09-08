@@ -53,7 +53,7 @@ def delete_element(array, idx):
 
 def main():
     payment = 0
-    data = load_data("data/contest_input.json")
+    data = load_data("contest_input.json")
     reward = 0
     stop_flag = 0
     couriers_start_position = [data[0][i+1]['location'] for i in range(len(data[0]))]
@@ -92,16 +92,11 @@ def main():
             cnt += 1
             tmp_route = []
             for j in range(len(points_pickup)):
-                tmp_route.append( {"courier_id": str(cnt_courier),
-                                  "action":"pickup", "order_id":str(10001+j),
-                                  "point_id":str(pickup_id[j])})
-                tmp_route.append( {"courier_id": str(cnt_courier),
-                                  "action":"dropoff", "order_id":str(10001+j),
-                                  "point_id":str(dropoff_id[j])})
                 # calculate route_time for each point from current courier position to dropoff
                 route_time = get_travel_duration_minutes(points_pickup[j],points_dropoff[j]) + get_travel_duration_minutes(points_pickup[j],
                                                                                                  courier_position)
-                if current_time in time_pickup[j] and current_time + route_time:
+                time_to_pickup = get_travel_duration_minutes(courier_position, points_pickup[j])
+                if current_time + time_to_pickup  in time_pickup[j] and current_time + route_time in time_dropoff[j]:
                     avaliable_pickups.append(points_pickup[j])       
 
             # calculate Manhattan distance to closest avaliable points
@@ -117,15 +112,21 @@ def main():
                         min_dist = tmp
                         current_order = i
 
+                tmp_route.append( {"courier_id": str(cnt_courier),
+                      "action":"pickup", "order_id":str(10001+j),
+                      "point_id":str(pickup_id[current_order])})
+                tmp_route.append( {"courier_id": str(cnt_courier),
+                                  "action":"dropoff", "order_id":str(10001+j),
+                                  "point_id":str(dropoff_id[current_order])})
+            
             # delete visited location
-
             print('the most far point: {}'.format(min_dist))
             courier_position = points_dropoff[j]
             print('send courier on {}'.format(courier_position))
             tmp_x.append(courier_position[0])
             tmp_y.append(courier_position[1])
 
-            current_time += route_time
+            current_time += route_time 
             payment = payments[current_order] 
             print('Payment: {}, salary: {}'.format(payments[current_order], route_time))
 
@@ -147,7 +148,7 @@ def main():
     for i in range(len(routes)):
         routes_dict.update({str(i):routes[i]})
     data=json.dumps(routes_dict)
-    with open('output.json', 'w') as outfile:
+    with open('output.txt', 'w') as outfile:
         json.dump(data, outfile)
 if __name__ == '__main__':
     main()
